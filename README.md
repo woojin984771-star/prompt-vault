@@ -15,4 +15,8 @@ Next.js / TypeScript / Supabase / Vercel
 - **2026-07-15**: 
   - Supabase Database 및 snippets 테이블 연동 완료
   - 로컬 환경 테스트 성공 (입력, 저장, 실시간 리스트 갱신 완료)
-  - Vercel을 이용한 프로덕션 배포 완료 (Hobby 플랜 무료 주소 생성)
+  - Vercel을 이용한 프로덕션 배포 완료 (Hobby 플랜 무료 주소 생성).
+  ### 2026-07-15 (수) - 배포 성공 및 1차 실전 테스트 완료
+- Vercel 실서버 배포 성공 (`https://prompt-vault-nu-two.vercel.app`)
+- 수파베이스 실서버 환경 변수 연동 완료 및 첫 도그푸딩 프롬프트(EasyRead) 배포 환경 저장 테스트 통과.
+- 스프린트의 적은 확장이므로 v2 후보는 무시하고 목요일까지 태그 필터링 및 원클릭 복사 기능 구현에 집중 예정.
