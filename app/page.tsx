@@ -971,7 +971,7 @@ export default function PromptSafePage() {
               <span className="hidden h-5 w-5 items-center justify-center rounded-full bg-slate-100 text-[11px] font-black text-black">
                 @
               </span>
-              <span>내 쓰레드</span>
+              <span>제작자 Threads</span>
             </a>
           </div>
 
