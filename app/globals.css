@@ -25,6 +25,60 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* 스크롤바 — 앱 전반의 인디고 톤에 맞춘 얇고 은은한 스타일 (다크/라이트 공용) */
+:root {
+  --scrollbar-thumb: rgba(79, 70, 229, 0.3);
+  --scrollbar-thumb-hover: rgba(79, 70, 229, 0.5);
+  --scrollbar-track: transparent;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --scrollbar-thumb: rgba(99, 102, 241, 0.35);
+    --scrollbar-thumb-hover: rgba(99, 102, 241, 0.6);
+  }
+}
+
+html[data-theme='dark'] {
+  --scrollbar-thumb: rgba(99, 102, 241, 0.35);
+  --scrollbar-thumb-hover: rgba(99, 102, 241, 0.6);
+}
+
+html[data-theme='light'] {
+  --scrollbar-thumb: rgba(79, 70, 229, 0.3);
+  --scrollbar-thumb-hover: rgba(79, 70, 229, 0.5);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scrollbar-thumb-hover);
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
 @keyframes scaleUp {
   0% {
     transform: scale(0.6);
@@ -53,4 +107,95 @@ body {
 
 .animate-fadeIn {
   animation: fadeIn 0.2s ease-out forwards;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes backdropFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-slideInRight {
+  animation: slideInRight 0.25s ease-out forwards;
+}
+
+.animate-backdropFadeIn {
+  animation: backdropFadeIn 0.2s ease-out forwards;
+}
+
+.animate-modalSlideUp {
+  animation: modalSlideUp 0.25s cubic-bezier(0.34, 1.2, 0.64, 1) forwards;
+}
+
+.animate-shimmer {
+  background-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes blobFloat {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(3%, -4%) scale(1.08);
+  }
+  66% {
+    transform: translate(-3%, 3%) scale(0.95);
+  }
+}
+
+.animate-blobFloat {
+  animation: blobFloat 16s ease-in-out infinite;
+}
+
+.animate-blobFloatSlow {
+  animation: blobFloat 22s ease-in-out infinite reverse;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-pulseGlow {
+  animation: pulseGlow 2.2s ease-in-out infinite;
 }
